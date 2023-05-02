@@ -11,13 +11,13 @@ import axios from 'axios';
 
 function App() {
   const [isAuthenticated, setisAuthenticated] = useState(false)
-  console.log(isAuthenticated)
+  
   let token = localStorage.getItem('token')
-  console.log(token)
+  
   const verifyUser = async () => {
     const res = await axios.post('http://localhost:8081/verify/user', { token: token })
 
-    console.log(res.data);
+    
     if (res.data.status === 1) {
       setisAuthenticated(true)
     }

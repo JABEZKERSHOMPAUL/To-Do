@@ -38,7 +38,7 @@ function SignIn() {
         }
 
         const res = await axios.post('http://localhost:8081/signup/user', signup)
-        console.log(res);
+       
         if (res.data.status === 1) {
             toast.success(res.data.message)
             setTimeout(() => {

@@ -56,7 +56,7 @@ function Form() {
     }
 
     const edit = async (id) => {
-        console.log(id)
+        
         if(id!==undefined){
             const res = await axios.get(`http://localhost:8081/get/one/list/${id}`,{
                 headers: {
@@ -90,7 +90,7 @@ function Form() {
 
 
     }
-    console.log(getbackid)
+   
     const handledelete = async (id) => {
         const res = await axios.delete(`http://localhost:8081/delete/student/${id}`,{
             headers: {
@@ -102,7 +102,7 @@ function Form() {
 
 
     }
-    console.log(getbackid)
+   
 
 
     const handleMission = async (id) => {
@@ -115,7 +115,7 @@ function Form() {
             toast.success('updated')
             setgetbackid("")
             getallList()
-            console.log(getallList)
+           
         }
 
 

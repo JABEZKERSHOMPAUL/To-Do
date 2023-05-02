@@ -41,7 +41,7 @@ function Login() {
 
 
         const res = await axios.post("http://localhost:8081/signin/user", userLogin)
-        console.log(res);
+       
         if (res.data.status !== 0) {
             toast.success(res.data.message)
             localStorage.setItem('token', res.data.token)
@@ -49,7 +49,7 @@ function Login() {
 
                 navigate('/home')
             }, 3000);
-            console.log(res.data.token)
+           
 
         } else {
             toast.error(res.data.message)
