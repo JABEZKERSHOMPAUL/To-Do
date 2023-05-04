@@ -41,18 +41,22 @@ function Login() {
 
 
         const res = await axios.post("http://localhost:8081/signin/user", userLogin)
-       
+
         if (res.data.status !== 0) {
             toast.success(res.data.message)
             localStorage.setItem('token', res.data.token)
-            setTimeout(() => {
+            if(res.data.status!==2){
+                setTimeout(() => {
 
-                navigate('/home')
-            }, 3000);
+                    navigate('/home')
+                }, 3000);
+            }
            
+
 
         } else {
             toast.error(res.data.message)
+        
         }
 
     }
