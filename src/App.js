@@ -24,7 +24,7 @@ function App() {
   }
 
   useEffect(() => {
-    if (token !== null) {
+    if (token !== "") {
       verifyUser()
     }
   }, [token])
