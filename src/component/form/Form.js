@@ -13,7 +13,7 @@ function Form() {
 
 
     const getallList = async () => {
-        const res = await axios.get("http://localhost:8081/get/all/list", {
+        const res = await axios.get("https://todobackend-dikv.onrender.com/get/all/list", {
             headers: {
                 Authorization:localStorage.getItem('token')
             }
@@ -41,7 +41,7 @@ function Form() {
             toast.error("add to-do")
             return;
         }
-        const res = await axios.post('http://localhost:8081/create/todo', { todo: addlist },{
+        const res = await axios.post('https://todobackend-dikv.onrender.com/create/todo', { todo: addlist },{
             headers: {
                 Authorization:localStorage.getItem('token')
             }
@@ -58,7 +58,7 @@ function Form() {
     const edit = async (id) => {
         
         if(id!==undefined){
-            const res = await axios.get(`http://localhost:8081/get/one/list/${id}`,{
+            const res = await axios.get(`https://todobackend-dikv.onrender.com/get/one/list/${id}`,{
                 headers: {
                     Authorization:localStorage.getItem('token')
                 }
@@ -76,7 +76,7 @@ function Form() {
 
     const handlechangeEdit = async (id) => {
        
-            const res = await axios.put(`http://localhost:8081/update/list/${id}`, getbackid,{
+            const res = await axios.put(`https://todobackend-dikv.onrender.com/update/list/${id}`, getbackid,{
                 headers: {
                     Authorization:localStorage.getItem('token')
                 }
@@ -92,7 +92,7 @@ function Form() {
     }
    
     const handledelete = async (id) => {
-        const res = await axios.delete(`http://localhost:8081/delete/student/${id}`,{
+        const res = await axios.delete(`https://todobackend-dikv.onrender.com/delete/student/${id}`,{
             headers: {
                 Authorization:localStorage.getItem('token')
             }
@@ -106,7 +106,7 @@ function Form() {
 
 
     const handleMission = async (id) => {
-        const res = await axios.put(`http://localhost:8081/update/mission/${id}`, { isCompleted: true },{
+        const res = await axios.put(`https://todobackend-dikv.onrender.com/update/mission/${id}`, { isCompleted: true },{
             headers: {
                 Authorization:localStorage.getItem('token')
             }
